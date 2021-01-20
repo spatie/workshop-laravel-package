@@ -6,6 +6,8 @@ class DemoController
 {
     public function show()
     {
-        return 'greetings from ' . config('workshop-laravel-package.name');
+        return view('workshop-laravel-package::show', [
+            'name' => config('workshop-laravel-package.name'),
+        ]);
     }
 }

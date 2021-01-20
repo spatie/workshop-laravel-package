@@ -4,14 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorkshopLaravelPackageTable extends Migration
+class CreatePostsTable extends Migration
 {
     public function up()
     {
-        Schema::create('workshop-laravel-package_table', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            // add fields
+            $table->string('title');
 
             $table->timestamps();
         });

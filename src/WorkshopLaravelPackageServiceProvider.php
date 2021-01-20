@@ -15,11 +15,11 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/workshop-laravel-package.php' => config_path('workshop-laravel-package.php'),
             ], 'workshop-config');
-            /*
 
            $this->publishes([
                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/workshop-laravel-package'),
-           ], 'views');
+           ], 'workshop-laravel-package-views');
+            /*
 
            $migrationFileName = 'create_workshop_laravel_package_table.php';
            if (! $this->migrationFileExists($migrationFileName)) {
@@ -34,9 +34,13 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
             ]);
         }
 
-//        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'workshop-laravel-package');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'workshop-laravel-package');
 
-        Route::get('demo', [DemoController::class, 'show']);
+        Route::macro('myPackage', function(string $prefix = 'demo') {
+            Route::get($prefix, [DemoController::class, 'show']);
+        });
+
+
     }
 
     public function register()
