@@ -21,12 +21,12 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
            ], 'workshop-laravel-package-views');
 
 
-           $migrationFileName = 'create_posts_table.php';
-           if (! $this->migrationFileExists($migrationFileName)) {
-               $this->publishes([
+            $migrationFileName = 'create_posts_table.php';
+            if (! $this->migrationFileExists($migrationFileName)) {
+                $this->publishes([
                    __DIR__ . "/../database/migrations/{$migrationFileName}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $migrationFileName),
                ], 'workshop-laravel-package-migrations');
-           }
+            }
 
             $this->commands([
                 ShowTextCommand::class,
@@ -44,7 +44,6 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/workshop-laravel-package.php', 'workshop-laravel-package');
     }
-
 
     public static function migrationFileExists(string $migrationFileName): bool
     {
