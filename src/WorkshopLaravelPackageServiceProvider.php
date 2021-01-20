@@ -2,8 +2,10 @@
 
 namespace Spatie\WorkshopLaravelPackage;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Spatie\WorkshopLaravelPackage\Commands\ShowTextCommand;
+use Spatie\WorkshopLaravelPackage\Http\Controllers\DemoController;
 
 class WorkshopLaravelPackageServiceProvider extends ServiceProvider
 {
@@ -34,6 +36,8 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
         }
 
 //        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'workshop-laravel-package');
+
+        Route::get('demo', [DemoController::class, 'show']);
     }
 
     public function register()
