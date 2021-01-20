@@ -10,7 +10,6 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-
             $this->publishes([
                 __DIR__ . '/../config/workshop-laravel-package.php' => config_path('workshop-laravel-package.php'),
             ], 'workshop-config');
