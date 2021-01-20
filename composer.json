@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "spatie/workshop-laravel-package",
+    "description": "A package created in the packages workshop",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "spatie",
+        "workshop-laravel-package"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/spatie/workshop-laravel-package",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
             "role": "Developer"
         }
     ],
@@ -24,13 +24,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Spatie\\WorkshopLaravelPackage\\": "src",
+            "Spatie\\WorkshopLaravelPackage\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Spatie\\WorkshopLaravelPackage\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "Spatie\\WorkshopLaravelPackage\\WorkshopLaravelPackageServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "WorkshopLaravelPackage": "Spatie\\WorkshopLaravelPackage\\WorkshopLaravelPackageFacade"
             }
         }
     },
