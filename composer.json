@@ -45,10 +45,7 @@
         "laravel": {
             "providers": [
                 "Spatie\\WorkshopLaravelPackage\\WorkshopLaravelPackageServiceProvider"
-            ],
-            "aliases": {
-                "WorkshopLaravelPackage": "Spatie\\WorkshopLaravelPackage\\WorkshopLaravelPackageFacade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

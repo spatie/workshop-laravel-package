@@ -3,13 +3,14 @@
 namespace Spatie\WorkshopLaravelPackage;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\WorkshopLaravelPackage\Commands\WorkshopLaravelPackageCommand;
+use Spatie\WorkshopLaravelPackage\Commands\ShowTextCommand;
 
 class WorkshopLaravelPackageServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         if ($this->app->runningInConsole()) {
+        /*
             $this->publishes([
                 __DIR__ . '/../config/workshop-laravel-package.php' => config_path('workshop-laravel-package.php'),
             ], 'config');
@@ -24,20 +25,22 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
                     __DIR__ . "/../database/migrations/{$migrationFileName}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $migrationFileName),
                 ], 'migrations');
             }
+        */
 
             $this->commands([
-                WorkshopLaravelPackageCommand::class,
+                ShowTextCommand::class,
             ]);
         }
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'workshop-laravel-package');
+//        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'workshop-laravel-package');
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/workshop-laravel-package.php', 'workshop-laravel-package');
+     //   $this->mergeConfigFrom(__DIR__ . '/../config/workshop-laravel-package.php', 'workshop-laravel-package');
     }
 
+    /*
     public static function migrationFileExists(string $migrationFileName): bool
     {
         $len = strlen($migrationFileName);
@@ -49,4 +52,5 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
 
         return false;
     }
+    */
 }
