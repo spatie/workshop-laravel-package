@@ -16,7 +16,7 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
                 __DIR__ . '/../config/workshop-laravel-package.php' => config_path('workshop-laravel-package.php'),
             ], 'workshop-config');
 
-           $this->publishes([
+            $this->publishes([
                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/workshop-laravel-package'),
            ], 'workshop-laravel-package-views');
 
@@ -35,11 +35,9 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'workshop-laravel-package');
 
-        Route::macro('myPackage', function(string $prefix = 'demo') {
+        Route::macro('myPackage', function (string $prefix = 'demo') {
             Route::get($prefix, [DemoController::class, 'show']);
         });
-
-
     }
 
     public function register()
