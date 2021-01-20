@@ -12,6 +12,6 @@ class ShowTextCommand extends Command
 
     public function handle()
     {
-        $this->comment('Hey everybody');
+        $this->comment('Hey ' . config('workshop-laravel-package.name'));
     }
 }
