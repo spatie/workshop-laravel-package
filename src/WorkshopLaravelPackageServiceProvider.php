@@ -19,15 +19,14 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
            $this->publishes([
                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/workshop-laravel-package'),
            ], 'workshop-laravel-package-views');
-            /*
 
-           $migrationFileName = 'create_workshop_laravel_package_table.php';
+
+           $migrationFileName = 'create_posts_table.php';
            if (! $this->migrationFileExists($migrationFileName)) {
                $this->publishes([
                    __DIR__ . "/../database/migrations/{$migrationFileName}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $migrationFileName),
-               ], 'migrations');
+               ], 'workshop-laravel-package-migrations');
            }
-       */
 
             $this->commands([
                 ShowTextCommand::class,
@@ -48,7 +47,7 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/workshop-laravel-package.php', 'workshop-laravel-package');
     }
 
-    /*
+
     public static function migrationFileExists(string $migrationFileName): bool
     {
         $len = strlen($migrationFileName);
@@ -60,5 +59,4 @@ class WorkshopLaravelPackageServiceProvider extends ServiceProvider
 
         return false;
     }
-    */
 }
