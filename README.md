@@ -1,7 +1,7 @@
 # A package created in the packages workshop
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/workshop-laravel-package.svg?style=flat-square)](https://packagist.org/packages/spatie/workshop-laravel-package)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/workshop-laravel-package/run-tests?label=tests)](https://github.com/spatie/workshop-laravel-package/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Tests Action Status](https://github.com/spatie/workshop-laravel-package/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/workshop-laravel-package/actions?query=workflow%3ATests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/workshop-laravel-package.svg?style=flat-square)](https://packagist.org/packages/spatie/workshop-laravel-package)
 
 
